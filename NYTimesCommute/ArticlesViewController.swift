@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 import CoreData
 
-class ArticlesTableViewController: UITableViewController, UITableViewDataSource {
+class ArticlesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var articlesTable: UITableView!
     
     var articlesData = [Article]()
     
@@ -34,6 +36,7 @@ class ArticlesTableViewController: UITableViewController, UITableViewDataSource 
     }
     
     override func viewWillAppear(animated: Bool) {
+        
         super.viewWillAppear(animated)
         
         let appDelegate =
@@ -54,23 +57,26 @@ class ArticlesTableViewController: UITableViewController, UITableViewDataSource 
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
         }
-        
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return articlesData.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "articleCell")
         
         var article = articlesData[indexPath.row]
         
         cell.textLabel!.text = article.title
-        cell.detailTextLabel!.text = article.content
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         return cell
     }
-
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let article = articlesData[indexPath.row]
+        self.performSegueWithIdentifier("detailsSegue", sender: article)
+    }
     
 }

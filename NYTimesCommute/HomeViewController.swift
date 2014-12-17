@@ -44,8 +44,6 @@ class HomeViewController: UIViewController{
         let networkTask = mySession.dataTaskWithURL(url, completionHandler : {data, response, error -> Void in
             var err: NSErrorPointer = nil
             
-            println(data)
-            
             if data.length>0 {
                 
                 var theJSON = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: err) as NSMutableDictionary
@@ -55,7 +53,7 @@ class HomeViewController: UIViewController{
                     self.saveArticles()
                     
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-                    let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ArticlesTableViewController") as UIViewController
+                    let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ArticlesNavigationController") as UIViewController
                     self.presentViewController(vc, animated: true, completion: nil)
                 })
 
@@ -79,7 +77,6 @@ class HomeViewController: UIViewController{
             newArticle.setValue(articleData["abstract"], forKey: "content")
             
             managedContext.save(nil)
-            
             
             var error: NSError?
             if !managedContext.save(&error) {

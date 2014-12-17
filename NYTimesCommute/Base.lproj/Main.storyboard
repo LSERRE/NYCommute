@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="afN-fN-3dA" customClass="HomeViewController" customModule="NYTimesCommute" customModuleProvider="target" sceneMemberID="viewController">
                     <activityIndicatorView key="view" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="euo-GX-eQX">
-                        <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                        <rect key="frame" x="-10" y="-10" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </activityIndicatorView>
@@ -21,30 +21,117 @@
             </objects>
             <point key="canvasLocation" x="141" y="579"/>
         </scene>
-        <!--ArticlesViewController-->
-        <scene sceneID="cWn-C9-qBz">
+        <!--News-->
+        <scene sceneID="lwv-SB-Elr">
             <objects>
-                <tableViewController storyboardIdentifier="ArticlesTableViewController" title="ArticlesViewController" id="I4S-22-eNK" customClass="ArticlesTableViewController" customModule="NYTimesCommute" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="WlS-H2-k6U">
+                <viewController storyboardIdentifier="ArticlesViewController" id="9cg-CQ-8lw" customClass="ArticlesViewController" customModule="NYTimesCommute" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3rR-5J-FRC"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Jx-jD-ary"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oBn-U9-DNZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="articlesTable" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dJR-Tg-wOs">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="articleCell" id="eAy-Cx-9oT">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eAy-Cx-9oT" id="czT-ex-J4c">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnd-EZ-M3d">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="17" y="11" width="42" height="21"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="Dnd-EZ-M3d"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="Dnd-EZ-M3d"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="664"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="9cg-CQ-8lw" id="EQF-uf-4II"/>
+                                    <outlet property="delegate" destination="9cg-CQ-8lw" id="FQ5-ho-9Vq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="dJR-Tg-wOs"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="dJR-Tg-wOs"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="News" id="nPC-2Y-6Dx"/>
+                    <connections>
+                        <outlet property="articlesTable" destination="dJR-Tg-wOs" id="yXO-fv-6ft"/>
+                        <segue destination="59q-Ti-pXy" kind="show" identifier="detailsSegue" id="bdf-25-8pV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FkQ-Yy-Jk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1743" y="579"/>
+        </scene>
+        <!--Article Detail View Controller-->
+        <scene sceneID="ZDD-m1-o4D">
+            <objects>
+                <viewController storyboardIdentifier="ArticleDetailViewController" id="59q-Ti-pXy" customClass="ArticleDetailViewController" customModule="NYTimesCommute" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hYK-gw-qrH"/>
+                        <viewControllerLayoutGuide type="bottom" id="qu6-7Q-CI0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rhh-SV-c0q">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="k7e-O6-BU3">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k7e-O6-BU3" id="kfz-1L-TLa">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="I4S-22-eNK" id="hSH-y4-XXe"/>
-                            <outlet property="delegate" destination="I4S-22-eNK" id="4vt-aN-e3v"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yp5-5K-j1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zby-4u-bAg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ADt-b6-0KO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="577"/>
+            <point key="canvasLocation" x="2586" y="579"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0cw-pS-Gcq">
+            <objects>
+                <navigationController storyboardIdentifier="ArticlesNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ChS-Aj-7HC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ba7-kM-JD6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9cg-CQ-8lw" kind="relationship" relationship="rootViewController" id="CaT-Nl-arr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uKF-K1-1DS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="801" y="579"/>
         </scene>
     </scenes>
 </document>
