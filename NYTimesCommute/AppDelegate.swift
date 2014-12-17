@@ -17,11 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) {
         Parse.setApplicationId("VLKdouPjZvdoDWEQuKv3jrpe5AvF3S7bhejujSyx", clientKey: "EepNKTMmHUR8l6hjpHhLsB9iq7MPV4UI5nJOHs92")
-
-        var object = PFObject(className: "TestClass")
-        object.addObject("Banana", forKey: "favoriteFood")
-        object.addObject("Chocolate", forKey: "favoriteIceCream")
-        object.save()
     }
     
 
