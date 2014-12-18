@@ -105,6 +105,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    
+    // Fucntion to reset the SQLite data
+    func resetCoreData(){
+        
+        var context : NSManagedObjectContext = self.managedObjectContext!
+        
+        // Reset the context
+        context.reset()
+        
+        var persistentStoreCoordinator = self.persistentStoreCoordinator!
+        var error: NSError? = nil
+        
+        // Iterate through all persistent stores and remove them
+        for store in persistentStoreCoordinator.persistentStores{
+            var removed : Bool = persistentStoreCoordinator.removePersistentStore(store as NSPersistentStore, error: nil)
+            if (!removed) {
+                println("Unable to remove persistent store")
+            }
+        }
+        
+        // Create a NSFileManager instance
+        var fileManager : NSFileManager = NSFileManager.defaultManager()
+        
+        // Search for the Document Directory
+        var paths : NSArray = NSSearchPathForDirectoriesInDomains(.DocumentDirectory , .UserDomainMask, true)
+        
+        var documentsDirectory : NSString = paths.objectAtIndex(0) as NSString
+        
+        // Create a path to the old SQLite file
+        var oldSqlitePath : NSString = documentsDirectory.stringByAppendingPathComponent("NYTimesCommute.sqlite")
+        
+        // Path to the new SQLite file
+        // it may be downloaded from a webserver
+        // or from the resource folder
+        var newSqlitePath : NSString = documentsDirectory.stringByAppendingPathComponent("data/NYTimesCommute.sqlite")
+        
+        // Delete the old SQLite file
+        fileManager.removeItemAtPath(oldSqlitePath, error: nil)
+        
+        // Copy the new SQlite file to the Document directory
+        fileManager.copyItemAtPath(newSqlitePath, toPath: oldSqlitePath, error: NSErrorPointer())
+        
+        // Maps the new SQLite file with the persistent store
+        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("NYTimesCommute.sqlite")
+        var options : NSDictionary = [ NSMigratePersistentStoresAutomaticallyOption : true, NSInferMappingModelAutomaticallyOption : true ]
+        var persistentStore : NSPersistentStore = persistentStoreCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: options, error: &error)!
+        
+    }
 
 }
 

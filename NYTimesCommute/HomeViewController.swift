@@ -30,10 +30,12 @@ class HomeViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         
         activity.startAnimating()
         getNYTJSON("http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1?api-key=93344f496633c8f3886831c3b9984910:14:70443089")
         
+        appDelegate.resetCoreData()
         saveArticles()
         
     }
@@ -70,8 +72,7 @@ class HomeViewController: UIViewController{
     
     func saveArticles(){
 
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
         
