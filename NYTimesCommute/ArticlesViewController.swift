@@ -27,8 +27,6 @@ class ArticlesViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        articlesTable.rowHeight = UITableViewAutomaticDimension
-        articlesTable.estimatedRowHeight = 200
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,7 +79,7 @@ class ArticlesViewController: UIViewController, UITableViewDataSource, UITableVi
 //        let dateFormatter = NSDateFormatter()
 //        dateFormatter.dateFormat = "yyyy-MM-dd 'at' h:mm a"
 //        let stringDate = dateFormatter.stringFromDate(date)
-        
+//        
         cell.articleTitle.text = article.title
         cell.articleTitle.numberOfLines = 0;
         cell.articleLocation.text = article.location
