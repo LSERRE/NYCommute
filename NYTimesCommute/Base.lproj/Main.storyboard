@@ -1,27 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="afN-fN-3dA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Up6-XK-dfw">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
-        <scene sceneID="3sL-aV-HEr">
-            <objects>
-                <viewController id="afN-fN-3dA" customClass="HomeViewController" customModule="NYTimesCommute" customModuleProvider="target" sceneMemberID="viewController">
-                    <activityIndicatorView key="view" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="euo-GX-eQX">
-                        <rect key="frame" x="-10" y="-10" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </activityIndicatorView>
-                    <connections>
-                        <outlet property="activity" destination="euo-GX-eQX" id="z6r-Vg-lcc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X2q-GR-gON" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="141" y="579"/>
-        </scene>
-        <!--News-->
+        <!--Today's Reads-->
         <scene sceneID="lwv-SB-Elr">
             <objects>
                 <viewController storyboardIdentifier="ArticlesViewController" id="9cg-CQ-8lw" customClass="ArticlesViewController" customModule="NYTimesCommute" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,11 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="articlesTable" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dJR-Tg-wOs">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="articlesTable" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="20" rowHeight="290" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dJR-Tg-wOs">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="articleCell" id="eAy-Cx-9oT">
+                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="290" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="articleCell" id="eAy-Cx-9oT" customClass="ArticlesTableViewCell" customModule="NYTimesCommute" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eAy-Cx-9oT" id="czT-ex-J4c">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -48,21 +31,85 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="17" y="11" width="42" height="21"/>
+                                                        <rect key="frame" x="8" y="187" width="366" height="21"/>
                                                     </variation>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KRM-20-5Yo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="367" height="148"/>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SM-hi-BkD">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="254" width="366" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyE-fc-Tof">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="158" width="176" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZZ-Z4-JPw">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="215" width="329" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJi-d0-qN3">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <state key="normal" title="READ NOW">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="285" y="311" width="82" height="30"/>
+                                                    </variation>
+                                                    <connections>
+                                                        <segue destination="59q-Ti-pXy" kind="show" identifier="detailSegue" id="59b-co-dyQ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="Dnd-EZ-M3d"/>
+                                                    <exclude reference="KRM-20-5Yo"/>
+                                                    <exclude reference="1SM-hi-BkD"/>
+                                                    <exclude reference="eyE-fc-Tof"/>
+                                                    <exclude reference="5ZZ-Z4-JPw"/>
+                                                    <exclude reference="lJi-d0-qN3"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="Dnd-EZ-M3d"/>
+                                                    <include reference="KRM-20-5Yo"/>
+                                                    <include reference="1SM-hi-BkD"/>
+                                                    <include reference="eyE-fc-Tof"/>
+                                                    <include reference="5ZZ-Z4-JPw"/>
+                                                    <include reference="lJi-d0-qN3"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="articleContent" destination="1SM-hi-BkD" id="sOq-cX-Oct"/>
+                                            <outlet property="articleDate" destination="eyE-fc-Tof" id="yhy-z2-EdE"/>
+                                            <outlet property="articleLocation" destination="5ZZ-Z4-JPw" id="hP2-V4-phN"/>
+                                            <outlet property="articleThumbnail" destination="KRM-20-5Yo" id="DrX-e6-Lzh"/>
+                                            <outlet property="articleTitle" destination="Dnd-EZ-M3d" id="kn6-M6-ciF"/>
+                                            <outlet property="readNow" destination="lJi-d0-qN3" id="UVD-jr-wpP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -86,15 +133,14 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="News" id="nPC-2Y-6Dx"/>
+                    <navigationItem key="navigationItem" title="Today's Reads" id="nPC-2Y-6Dx"/>
                     <connections>
-                        <outlet property="articlesTable" destination="dJR-Tg-wOs" id="yXO-fv-6ft"/>
-                        <segue destination="59q-Ti-pXy" kind="show" identifier="detailsSegue" id="bdf-25-8pV"/>
+                        <outlet property="articlesTable" destination="dJR-Tg-wOs" id="H3F-p6-Nzz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FkQ-Yy-Jk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1743" y="579"/>
+            <point key="canvasLocation" x="1743" y="570"/>
         </scene>
         <!--Article Detail View Controller-->
         <scene sceneID="ZDD-m1-o4D">
@@ -115,16 +161,67 @@
             </objects>
             <point key="canvasLocation" x="2586" y="579"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="Xyj-ZH-N10">
+            <objects>
+                <viewController id="Up6-XK-dfw" customClass="HomeViewController" customModule="NYTimesCommute" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fnl-MT-g0R"/>
+                        <viewControllerLayoutGuide type="bottom" id="AAz-HY-n89"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BjU-sT-efS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XET-fs-fHg">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="190" y="401" width="20" height="20"/>
+                                </variation>
+                            </activityIndicatorView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home-background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Db0-0W-1EU">
+                                <rect key="frame" x="0.0" y="-1136" width="640" height="1136"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-117" y="-273" width="640" height="1136"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="XET-fs-fHg"/>
+                                <exclude reference="Db0-0W-1EU"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="XET-fs-fHg"/>
+                                <include reference="Db0-0W-1EU"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="activity" destination="XET-fs-fHg" id="xam-CX-K8b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xsy-n1-KrE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="39" y="577"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="0cw-pS-Gcq">
             <objects>
-                <navigationController storyboardIdentifier="ArticlesNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ChS-Aj-7HC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ArticlesNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ChS-Aj-7HC" customClass="NavigationController" customModule="NYTimesCommute" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ba7-kM-JD6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Afh-1L-71H">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="9cg-CQ-8lw" kind="relationship" relationship="rootViewController" id="CaT-Nl-arr"/>
                     </connections>
@@ -134,4 +231,7 @@
             <point key="canvasLocation" x="801" y="579"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home-background.png" width="640" height="1136"/>
+    </resources>
 </document>

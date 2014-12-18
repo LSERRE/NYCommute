@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83138D311A424E08004DF114 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83138D301A424E08004DF114 /* Article.swift */; };
 		831D2DA81A407F740078DA0F /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831D2DA71A407F740078DA0F /* ArticlesViewController.swift */; };
 		831D2DAA1A408E740078DA0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831D2DA91A408E740078DA0F /* ViewController.swift */; };
+		8350DC6C1A42008900A211E6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350DC6B1A42008900A211E6 /* NavigationController.swift */; };
 		8362AFE11A41B8E00006785D /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8362AFE01A41B8E00006785D /* ArticleDetailViewController.swift */; };
-		8382CB991A418BEC00EED15E /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8382CB981A418BEC00EED15E /* Article.swift */; };
+		837DA17D1A426B2B0047239D /* home-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 837DA17C1A426B2B0047239D /* home-background.png */; };
+		837DA17F1A426D770047239D /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837DA17E1A426D770047239D /* ArticleTableViewCell.swift */; };
 		8382CB9B1A418BED00EED15E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8382CB9A1A418BED00EED15E /* Setting.swift */; };
 		8382CB9D1A418BED00EED15E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8382CB9C1A418BED00EED15E /* Category.swift */; };
 		D8137A361A406E25006C1726 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8137A351A406E25006C1726 /* libsqlite3.dylib */; };
@@ -49,10 +52,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		83138D301A424E08004DF114 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		831D2DA71A407F740078DA0F /* ArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		831D2DA91A408E740078DA0F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8350DC6B1A42008900A211E6 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		8362AFE01A41B8E00006785D /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
-		8382CB981A418BEC00EED15E /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		837DA17C1A426B2B0047239D /* home-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-background.png"; sourceTree = "<group>"; };
+		837DA17E1A426D770047239D /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		8382CB9A1A418BED00EED15E /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		8382CB9C1A418BED00EED15E /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D8137A341A406A9A006C1726 /* NYTimesCommute-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NYTimesCommute-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -156,6 +162,8 @@
 		D864E90C1A4068D100F550A4 /* NYTimesCommute */ = {
 			isa = PBXGroup;
 			children = (
+				837DA17C1A426B2B0047239D /* home-background.png */,
+				83138D301A424E08004DF114 /* Article.swift */,
 				D864E90F1A4068D100F550A4 /* AppDelegate.swift */,
 				D864E9141A4068D100F550A4 /* HomeViewController.swift */,
 				D864E9161A4068D100F550A4 /* Main.storyboard */,
@@ -165,11 +173,12 @@
 				D864E9111A4068D100F550A4 /* NYTimesCommute.xcdatamodeld */,
 				8382CB9C1A418BED00EED15E /* Category.swift */,
 				8382CB9A1A418BED00EED15E /* Setting.swift */,
-				8382CB981A418BEC00EED15E /* Article.swift */,
 				D864E90D1A4068D100F550A4 /* Supporting Files */,
 				831D2DA71A407F740078DA0F /* ArticlesViewController.swift */,
 				831D2DA91A408E740078DA0F /* ViewController.swift */,
 				8362AFE01A41B8E00006785D /* ArticleDetailViewController.swift */,
+				8350DC6B1A42008900A211E6 /* NavigationController.swift */,
+				837DA17E1A426D770047239D /* ArticleTableViewCell.swift */,
 			);
 			path = NYTimesCommute;
 			sourceTree = "<group>";
@@ -279,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				837DA17D1A426B2B0047239D /* home-background.png in Resources */,
 				D864E9181A4068D100F550A4 /* Main.storyboard in Resources */,
 				D864E91D1A4068D100F550A4 /* LaunchScreen.xib in Resources */,
 				D864E91A1A4068D100F550A4 /* Images.xcassets in Resources */,
@@ -301,11 +311,13 @@
 			files = (
 				831D2DAA1A408E740078DA0F /* ViewController.swift in Sources */,
 				D864E9151A4068D100F550A4 /* HomeViewController.swift in Sources */,
-				8382CB991A418BEC00EED15E /* Article.swift in Sources */,
+				837DA17F1A426D770047239D /* ArticleTableViewCell.swift in Sources */,
 				831D2DA81A407F740078DA0F /* ArticlesViewController.swift in Sources */,
 				8382CB9B1A418BED00EED15E /* Setting.swift in Sources */,
 				D864E9131A4068D100F550A4 /* NYTimesCommute.xcdatamodeld in Sources */,
 				D864E9101A4068D100F550A4 /* AppDelegate.swift in Sources */,
+				83138D311A424E08004DF114 /* Article.swift in Sources */,
+				8350DC6C1A42008900A211E6 /* NavigationController.swift in Sources */,
 				8382CB9D1A418BED00EED15E /* Category.swift in Sources */,
 				8362AFE11A41B8E00006785D /* ArticleDetailViewController.swift in Sources */,
 			);

@@ -13,7 +13,6 @@ import CoreData
 class ArticlesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var articlesTable: UITableView!
-    
     var articlesData = [Article]()
     
     lazy var managedObjectContext : NSManagedObjectContext? = {
@@ -28,6 +27,8 @@ class ArticlesViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        articlesTable.rowHeight = UITableViewAutomaticDimension
+        articlesTable.estimatedRowHeight = 200
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,26 +58,39 @@ class ArticlesViewController: UIViewController, UITableViewDataSource, UITableVi
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
         }
+    
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return articlesData.count
     }
     
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+    
         
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "articleCell")
+        let cell: ArticlesTableViewCell = articlesTable.dequeueReusableCellWithIdentifier("articleCell") as ArticlesTableViewCell
         
         var article = articlesData[indexPath.row]
         
-        cell.textLabel!.text = article.title
-        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        let decodedData = NSData(base64EncodedString: article.thumbnail, options:NSDataBase64DecodingOptions(rawValue: 0))
+        var decodedimage = UIImage(data: decodedData!)
+
+        
+//        var date : NSDate = article.date as NSDate
+//        let dateFormatter = NSDateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd 'at' h:mm a"
+//        let stringDate = dateFormatter.stringFromDate(date)
+        
+        cell.articleTitle.text = article.title
+        cell.articleTitle.numberOfLines = 0;
+        cell.articleLocation.text = article.location
+        cell.articleContent.text = article.content
+        cell.articleContent.numberOfLines = 0;
+        cell.articleThumbnail.image = decodedimage
+//        cell.articleDate.text = stringDate
+        
         return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let article = articlesData[indexPath.row]
-        self.performSegueWithIdentifier("detailsSegue", sender: article)
     }
     
 }

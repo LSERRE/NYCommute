@@ -1,8 +1,8 @@
 //
-//  Article.swift
+//  NYTimesCommute.swift
 //  NYTimesCommute
 //
-//  Created by Louis SERRE on 17/12/2014.
+//  Created by Louis SERRE on 18/12/2014.
 //  Copyright (c) 2014 loicsaintroch. All rights reserved.
 //
 
@@ -14,5 +14,8 @@ class Article: NSManagedObject {
     @NSManaged var content: String
     @NSManaged var thumbnail: String
     @NSManaged var title: String
+    @NSManaged var location: String
+    @NSManaged var date: NSDate
+    @NSManaged var url: String
 
 }

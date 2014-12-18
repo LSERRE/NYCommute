@@ -13,8 +13,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) {
         Parse.setApplicationId("VLKdouPjZvdoDWEQuKv3jrpe5AvF3S7bhejujSyx", clientKey: "EepNKTMmHUR8l6hjpHhLsB9iq7MPV4UI5nJOHs92")
     }
