@@ -74,12 +74,7 @@ class ArticlesViewController: UIViewController, UITableViewDataSource, UITableVi
         let decodedData = NSData(base64EncodedString: article.thumbnail, options:NSDataBase64DecodingOptions(rawValue: 0))
         var decodedimage = UIImage(data: decodedData!)
 
-        
-//        var date : NSDate = article.date as NSDate
-//        let dateFormatter = NSDateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd 'at' h:mm a"
-//        let stringDate = dateFormatter.stringFromDate(date)
-//        
+        cell.articleDate.text = article.date
         cell.articleTitle.text = article.title
         cell.articleTitle.numberOfLines = 0;
         cell.articleLocation.text = article.location

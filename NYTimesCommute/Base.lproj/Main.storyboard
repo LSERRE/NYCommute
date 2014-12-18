@@ -209,7 +209,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="articleContent" destination="Ea6-Im-TfI" id="SKt-s4-EyH"/>
-                                            <outlet property="articleDate" destination="DiT-pv-mgV" id="qaK-xn-F67"/>
+                                            <outlet property="articleDate" destination="qVX-PX-GPA" id="pdC-4T-1sh"/>
                                             <outlet property="articleLocation" destination="0h1-4G-4kJ" id="Ggr-Rj-Lpv"/>
                                             <outlet property="articleThumbnail" destination="afO-GM-AJH" id="Daf-0g-Ia6"/>
                                             <outlet property="articleTitle" destination="DiT-pv-mgV" id="StM-80-cwl"/>

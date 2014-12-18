@@ -15,7 +15,7 @@ class Article: NSManagedObject {
     @NSManaged var thumbnail: String
     @NSManaged var title: String
     @NSManaged var location: String
-    @NSManaged var date: NSDate
+    @NSManaged var date: String
     @NSManaged var url: String
 
 }

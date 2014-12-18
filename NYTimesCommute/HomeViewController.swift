@@ -78,13 +78,7 @@ class HomeViewController: UIViewController{
         
         for articleData in self.articlesData {
             let newArticle = NSEntityDescription.insertNewObjectForEntityForName("Article", inManagedObjectContext: managedContext) as NSManagedObject
-            
-            var media : AnyObject? = articleData["media"]
-            
-            var test: AnyObject? = media?.valueForKey("media-metadata")?.valueForKey("url")
-            
-            println(test)
-            
+
             var thumbnail =  UIImage(data: NSData(contentsOfURL: NSURL(string:"http://static01.nyt.com/images/2014/12/18/fashion/18SUBREFORMATION/18SUBREFORMATION-articleLarge.jpg")!)!)
             
             var location = articleData["geo_facet"]
@@ -93,21 +87,13 @@ class HomeViewController: UIViewController{
                 location = " ".join(stringArray)
             }
             
-            var dateString :NSString? = articleData["published_date"] as? NSString // change to your date format
-            
-            var dateFormatter = NSDateFormatter()
-            // this is imporant - we set our input date format to match our input string
-            dateFormatter.dateFormat = "dd-MM-yyyy"
-            // voila!
-            var date = dateFormatter.dateFromString(dateString!)
-            
             var imageData = UIImageJPEGRepresentation(thumbnail, 1)
             let base64String = imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
             
             newArticle.setValue(articleData["title"], forKey: "title")
             newArticle.setValue(articleData["abstract"], forKey: "content")
             newArticle.setValue(location, forKey: "location")
-            newArticle.setValue(date, forKey: "date")
+            newArticle.setValue(articleData["published_date"], forKey: "date")
             newArticle.setValue(articleData["url"], forKey: "url")
             newArticle.setValue(base64String, forKey: "thumbnail")
             
