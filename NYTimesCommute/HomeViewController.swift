@@ -14,7 +14,6 @@ class HomeViewController: UIViewController{
 
     var articlesData = []
     
-    
     @IBOutlet weak var backgroundImage: UIImageView!
     
 
@@ -79,6 +78,14 @@ class HomeViewController: UIViewController{
         
         for articleData in self.articlesData {
             let newArticle = NSEntityDescription.insertNewObjectForEntityForName("Article", inManagedObjectContext: managedContext) as NSManagedObject
+            
+            var media : AnyObject? = articleData["media"]
+            
+            var mediaList: AnyObject? = media?.valueForKey("media-metadata")
+            
+            for mediaitem in mediaList {
+                
+            }
             
             var thumbnail =  UIImage(data: NSData(contentsOfURL: NSURL(string:"http://static01.nyt.com/images/2014/12/18/fashion/18SUBREFORMATION/18SUBREFORMATION-articleLarge.jpg")!)!)
             
