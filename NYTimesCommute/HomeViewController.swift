@@ -81,11 +81,9 @@ class HomeViewController: UIViewController{
             
             var media : AnyObject? = articleData["media"]
             
-            var mediaList: AnyObject? = media?.valueForKey("media-metadata")
+            var test: AnyObject? = media?.valueForKey("media-metadata")?.valueForKey("url")
             
-            for mediaitem in mediaList {
-                
-            }
+            println(test)
             
             var thumbnail =  UIImage(data: NSData(contentsOfURL: NSURL(string:"http://static01.nyt.com/images/2014/12/18/fashion/18SUBREFORMATION/18SUBREFORMATION-articleLarge.jpg")!)!)
             
