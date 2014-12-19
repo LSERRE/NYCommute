@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Up6-XK-dfw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Up6-XK-dfw">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -158,23 +160,23 @@
                                                     <exclude reference="apf-zt-HpZ"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="JuU-Cy-N13"/>
-                                                    <exclude reference="L6j-LK-BPe"/>
-                                                    <exclude reference="zj6-xy-sdg"/>
+                                                    <exclude reference="Eiz-i3-v4F"/>
+                                                    <exclude reference="OlU-4F-fwP"/>
+                                                    <exclude reference="cAf-fY-2Tb"/>
+                                                    <exclude reference="mhR-yG-FHu"/>
+                                                    <exclude reference="hUY-W6-4gN"/>
+                                                    <exclude reference="1Sd-DX-qsh"/>
+                                                    <exclude reference="DdW-pK-1fh"/>
                                                     <exclude reference="7Be-Uq-zOr"/>
                                                     <exclude reference="DYH-aB-T0k"/>
                                                     <exclude reference="DhF-GW-cPs"/>
                                                     <exclude reference="Nbo-kn-s0j"/>
                                                     <exclude reference="TQo-mV-7AQ"/>
-                                                    <exclude reference="hUY-W6-4gN"/>
-                                                    <exclude reference="Eiz-i3-v4F"/>
-                                                    <exclude reference="OlU-4F-fwP"/>
-                                                    <exclude reference="cAf-fY-2Tb"/>
-                                                    <exclude reference="mhR-yG-FHu"/>
-                                                    <exclude reference="1Sd-DX-qsh"/>
-                                                    <exclude reference="DdW-pK-1fh"/>
                                                     <exclude reference="pJa-as-YkL"/>
                                                     <exclude reference="qDQ-aV-XTv"/>
+                                                    <exclude reference="JuU-Cy-N13"/>
+                                                    <exclude reference="L6j-LK-BPe"/>
+                                                    <exclude reference="zj6-xy-sdg"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -187,23 +189,23 @@
                                                     <include reference="apf-zt-HpZ"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="JuU-Cy-N13"/>
-                                                    <include reference="L6j-LK-BPe"/>
-                                                    <include reference="zj6-xy-sdg"/>
+                                                    <include reference="Eiz-i3-v4F"/>
+                                                    <include reference="OlU-4F-fwP"/>
+                                                    <include reference="cAf-fY-2Tb"/>
+                                                    <include reference="mhR-yG-FHu"/>
+                                                    <include reference="hUY-W6-4gN"/>
+                                                    <include reference="1Sd-DX-qsh"/>
+                                                    <include reference="DdW-pK-1fh"/>
                                                     <include reference="7Be-Uq-zOr"/>
                                                     <include reference="DYH-aB-T0k"/>
                                                     <include reference="DhF-GW-cPs"/>
                                                     <include reference="Nbo-kn-s0j"/>
                                                     <include reference="TQo-mV-7AQ"/>
-                                                    <include reference="hUY-W6-4gN"/>
-                                                    <include reference="Eiz-i3-v4F"/>
-                                                    <include reference="OlU-4F-fwP"/>
-                                                    <include reference="cAf-fY-2Tb"/>
-                                                    <include reference="mhR-yG-FHu"/>
-                                                    <include reference="1Sd-DX-qsh"/>
-                                                    <include reference="DdW-pK-1fh"/>
                                                     <include reference="pJa-as-YkL"/>
                                                     <include reference="qDQ-aV-XTv"/>
+                                                    <include reference="JuU-Cy-N13"/>
+                                                    <include reference="L6j-LK-BPe"/>
+                                                    <include reference="zj6-xy-sdg"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -299,24 +301,24 @@
                                     <rect key="frame" x="190" y="401" width="37" height="37"/>
                                 </variation>
                             </activityIndicatorView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home-background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Db0-0W-1EU">
-                                <rect key="frame" x="0.0" y="-1136" width="640" height="1136"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="-114" y="-338" width="640" height="1136"/>
-                                </variation>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" image="Default-667h.png" translatesAutoresizingMaskIntoConstraints="NO" id="ogY-qC-5he">
+                                <rect key="frame" x="113" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="ogY-qC-5he" secondAttribute="width" id="2YL-nb-9yB"/>
+                            <constraint firstAttribute="height" secondItem="ogY-qC-5he" secondAttribute="height" id="EW4-aE-IXj"/>
+                            <constraint firstAttribute="width" secondItem="ogY-qC-5he" secondAttribute="height" multiplier="600:667" id="ywz-57-w49"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="XET-fs-fHg"/>
-                                <exclude reference="Db0-0W-1EU"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="XET-fs-fHg"/>
-                                <include reference="Db0-0W-1EU"/>
                             </mask>
                         </variation>
                     </view>
@@ -326,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsy-n1-KrE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="39" y="577"/>
+            <point key="canvasLocation" x="155" y="595"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0cw-pS-Gcq">
@@ -351,6 +353,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="home-background.png" width="640" height="1136"/>
+        <image name="Default-667h.png" width="375" height="667"/>
     </resources>
 </document>

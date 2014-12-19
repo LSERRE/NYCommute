@@ -13,7 +13,8 @@ class NavigationController: UINavigationController, UIViewControllerTransitionin
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Status bar white font
+        self.navigationBar.barStyle = UIBarStyle.Black
+        self.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationBar.barTintColor = uicolorFromHex(0x292e3f)
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         self.navigationBar.titleTextAttributes = titleDict
