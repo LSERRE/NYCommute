@@ -17,4 +17,5 @@ class ArticlesTableViewCell: UITableViewCell{
     @IBOutlet weak var articleLocation: UILabel!
     @IBOutlet weak var articleDate: UILabel!
     @IBOutlet weak var articleContent: UILabel!
+    @IBOutlet weak var articleButton: UIButton!
 }

@@ -82,8 +82,25 @@ class ArticlesViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.articleContent.numberOfLines = 0;
         cell.articleThumbnail.image = decodedimage
         cell.articleDate.text = article.date
+        cell.articleButton.tag = indexPath.row
+        cell.articleButton.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
         
         return cell
     }
+    
+    func buttonClicked(sender:UIButton) {
+        let buttonRow = sender.tag
+        self.performSegueWithIdentifier("articleDetailSegue", sender: buttonRow)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "articleDetailSegue") {
+            let viewController:ArticleDetailViewController = segue.destinationViewController as ArticleDetailViewController
+            let index : Int = sender as Int
+            viewController.article = articlesData[index]
+        }
+    }
+
+    
     
 }

@@ -36,9 +36,9 @@ class HomeViewController: UIViewController{
         
         activity.startAnimating()
         
-        getJSON()
-        
         appDelegate.resetCoreData()
+        
+        getJSON()
         
     }
     
@@ -64,7 +64,7 @@ class HomeViewController: UIViewController{
                     
                     for (key: String, articleData: JSON) in realJSON["results"] {
                         let newArticle = NSEntityDescription.insertNewObjectForEntityForName("Article", inManagedObjectContext: managedContext) as NSManagedObject
-                    
+                        
                         if let url : NSString = articleData["media"][0]["media-metadata"][1]["url"].string  {
                             var thumbnail =  UIImage(data: NSData(contentsOfURL: NSURL(string:url)!)!)
                             var imageData = UIImageJPEGRepresentation(thumbnail, 1)
@@ -95,10 +95,12 @@ class HomeViewController: UIViewController{
                         }
                     }
                 }
-
-                    let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-                    let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ArticlesNavigationController") as UIViewController
-                    self.presentViewController(vc, animated: true, completion: nil)
-            }
+                
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+                let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ArticlesNavigationController") as UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
         }
     }
+
+}
+
