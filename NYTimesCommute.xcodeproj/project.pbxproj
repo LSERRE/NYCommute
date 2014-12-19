@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		83138D311A424E08004DF114 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83138D301A424E08004DF114 /* Article.swift */; };
+		8314219F1A445321004AC45B /* home-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8314219E1A445321004AC45B /* home-background.png */; };
+		831421A11A445359004AC45B /* background-infos.png in Resources */ = {isa = PBXBuildFile; fileRef = 831421A01A445359004AC45B /* background-infos.png */; };
 		831D2DA81A407F740078DA0F /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831D2DA71A407F740078DA0F /* ArticlesViewController.swift */; };
 		831D2DAA1A408E740078DA0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831D2DA91A408E740078DA0F /* ViewController.swift */; };
 		8350DC6C1A42008900A211E6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350DC6B1A42008900A211E6 /* NavigationController.swift */; };
@@ -16,8 +18,6 @@
 		837DA19B1A4362630047239D /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 837DA1951A4360FA0047239D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8382CB9B1A418BED00EED15E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8382CB9A1A418BED00EED15E /* Setting.swift */; };
 		8382CB9D1A418BED00EED15E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8382CB9C1A418BED00EED15E /* Category.swift */; };
-		83BA6DB61A43D37300B080A1 /* splashios.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BA6DB51A43D37300B080A1 /* splashios.png */; };
-		83BA6DBC1A43F35B00B080A1 /* background-infos.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BA6DBB1A43F35B00B080A1 /* background-infos.png */; };
 		D8137A361A406E25006C1726 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8137A351A406E25006C1726 /* libsqlite3.dylib */; };
 		D831F2331A43B23E00F963CB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D831F2291A43B23E00F963CB /* Default-568h@2x.png */; };
 		D831F2341A43B23E00F963CB /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D831F22A1A43B23E00F963CB /* Default-667h@2x.png */; };
@@ -135,6 +135,8 @@
 
 /* Begin PBXFileReference section */
 		83138D301A424E08004DF114 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		8314219E1A445321004AC45B /* home-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-background.png"; sourceTree = "<group>"; };
+		831421A01A445359004AC45B /* background-infos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-infos.png"; sourceTree = "<group>"; };
 		831D2DA71A407F740078DA0F /* ArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 1; };
 		831D2DA91A408E740078DA0F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8350DC6B1A42008900A211E6 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -144,8 +146,6 @@
 		837DA19C1A4365300047239D /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
 		8382CB9A1A418BED00EED15E /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		8382CB9C1A418BED00EED15E /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		83BA6DB51A43D37300B080A1 /* splashios.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splashios.png; path = ../../../../../../../Downloads/splashios.png; sourceTree = "<group>"; };
-		83BA6DBB1A43F35B00B080A1 /* background-infos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-infos.png"; path = "../../../../../../../Desktop/background-infos.png"; sourceTree = "<group>"; };
 		D8137A341A406A9A006C1726 /* NYTimesCommute-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NYTimesCommute-Bridging-Header.h"; sourceTree = "<group>"; };
 		D8137A351A406E25006C1726 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		D831F2291A43B23E00F963CB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -243,8 +243,8 @@
 		D831F2271A43B23E00F963CB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				83BA6DBB1A43F35B00B080A1 /* background-infos.png */,
-				83BA6DB51A43D37300B080A1 /* splashios.png */,
+				831421A01A445359004AC45B /* background-infos.png */,
+				8314219E1A445321004AC45B /* home-background.png */,
 				D831F2281A43B23E00F963CB /* iphone */,
 			);
 			path = Resources;
@@ -491,9 +491,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D831F2341A43B23E00F963CB /* Default-667h@2x.png in Resources */,
+				8314219F1A445321004AC45B /* home-background.png in Resources */,
 				D864E9181A4068D100F550A4 /* Main.storyboard in Resources */,
-				83BA6DB61A43D37300B080A1 /* splashios.png in Resources */,
-				83BA6DBC1A43F35B00B080A1 /* background-infos.png in Resources */,
+				831421A11A445359004AC45B /* background-infos.png in Resources */,
 				D831F23A1A43B23E00F963CB /* Default-Portrait@2x.png in Resources */,
 				D864E91D1A4068D100F550A4 /* LaunchScreen.xib in Resources */,
 				D831F2371A43B23E00F963CB /* Default-Landscape@2x.png in Resources */,
