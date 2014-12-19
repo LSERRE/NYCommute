@@ -9,10 +9,12 @@
 import UIKit
 import CoreData
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 class HomeViewController: UIViewController{
 
-    var articlesData = []
+    var articlesData:JSON!
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
@@ -33,10 +35,10 @@ class HomeViewController: UIViewController{
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         
         activity.startAnimating()
-        getNYTJSON("http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1?api-key=93344f496633c8f3886831c3b9984910:14:70443089")
+        
+        getJSON()
         
         appDelegate.resetCoreData()
-        saveArticles()
         
     }
     
@@ -45,66 +47,58 @@ class HomeViewController: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
-    func getNYTJSON(NYTUrl : String){
-        let mySession = NSURLSession.sharedSession()
-        let url: NSURL = NSURL(string: NYTUrl)!
-        let networkTask = mySession.dataTaskWithURL(url, completionHandler : {data, response, error -> Void in
-            var err: NSErrorPointer = nil
-            
-            if data.length>0 {
-                
-                var theJSON = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: err) as NSMutableDictionary
-                let results : NSArray = theJSON["results"] as NSArray
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.articlesData = results
-                    self.saveArticles()
+    func getJSON(){
+        Alamofire.request(.GET, "http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1?api-key=93344f496633c8f3886831c3b9984910:14:70443089")
+            .responseJSON { (req, res, json, error) in
+                if(error != nil) {
+                    NSLog("Error: \(error)")
+                    println(req)
+                    println(res)
+                }
+                else {
+                    let realJSON : JSON = JSON(json!) as JSON
                     
+                    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+                    
+                    let managedContext = appDelegate.managedObjectContext!
+                    
+                    for (key: String, articleData: JSON) in realJSON["results"] {
+                        let newArticle = NSEntityDescription.insertNewObjectForEntityForName("Article", inManagedObjectContext: managedContext) as NSManagedObject
+                    
+                        if let url : NSString = articleData["media"][0]["media-metadata"][1]["url"].string  {
+                            var thumbnail =  UIImage(data: NSData(contentsOfURL: NSURL(string:url)!)!)
+                            var imageData = UIImageJPEGRepresentation(thumbnail, 1)
+                            let base64String = imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+                            newArticle.setValue(base64String, forKey: "thumbnail")
+                        }
+                        else{
+                            var thumbnail =  UIImage(data: NSData(contentsOfURL: NSURL(string:"http://www.joomlaworks.net/images/demos/galleries/abstract/7.jpg")!)!)
+                            var imageData = UIImageJPEGRepresentation(thumbnail, 1)
+                            let base64String = imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+                            newArticle.setValue(base64String, forKey: "thumbnail")
+                        }
+                        
+                        if let url : NSString = articleData["geo_facet"].string{
+                            newArticle.setValue(articleData["geo_facet"].string, forKey: "location")
+                        }else{
+                            newArticle.setValue("World", forKey: "location")
+                        }
+                        
+                        newArticle.setValue(articleData["title"].string, forKey: "title")
+                        newArticle.setValue(articleData["abstract"].string, forKey: "content")
+                        newArticle.setValue(articleData["published_date"].string, forKey: "date")
+                        newArticle.setValue(articleData["url"].string, forKey: "url")
+                        managedContext.save(nil)
+                        var error: NSError?
+                        if !managedContext.save(&error) {
+                            println("Could not save \(error), \(error?.userInfo)")
+                        }
+                    }
+                }
+
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
                     let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ArticlesNavigationController") as UIViewController
                     self.presentViewController(vc, animated: true, completion: nil)
-                })
-
-            }
-            
-        })
-        networkTask.resume()
-    }
-    
-    func saveArticles(){
-
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        
-        let managedContext = appDelegate.managedObjectContext!
-        
-        for articleData in self.articlesData {
-            let newArticle = NSEntityDescription.insertNewObjectForEntityForName("Article", inManagedObjectContext: managedContext) as NSManagedObject
-
-            var thumbnail =  UIImage(data: NSData(contentsOfURL: NSURL(string:"http://static01.nyt.com/images/2014/12/18/fashion/18SUBREFORMATION/18SUBREFORMATION-articleLarge.jpg")!)!)
-            
-            var location = articleData["geo_facet"]
-            
-            if let stringArray = location as? [String] {
-                location = " ".join(stringArray)
-            }
-            
-            var imageData = UIImageJPEGRepresentation(thumbnail, 1)
-            let base64String = imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
-            
-            newArticle.setValue(articleData["title"], forKey: "title")
-            newArticle.setValue(articleData["abstract"], forKey: "content")
-            newArticle.setValue(location, forKey: "location")
-            newArticle.setValue(articleData["published_date"], forKey: "date")
-            newArticle.setValue(articleData["url"], forKey: "url")
-            newArticle.setValue(base64String, forKey: "thumbnail")
-            
-            managedContext.save(nil)
-            
-            var error: NSError?
-            if !managedContext.save(&error) {
-                println("Could not save \(error), \(error?.userInfo)")
             }
         }
-        
     }
-    
-}

@@ -81,7 +81,7 @@ class ArticlesViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.articleContent.text = article.content
         cell.articleContent.numberOfLines = 0;
         cell.articleThumbnail.image = decodedimage
-//        cell.articleDate.text = stringDate
+        cell.articleDate.text = article.date
         
         return cell
     }

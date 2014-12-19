@@ -64,6 +64,41 @@
 			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
 			remoteInfo = Alamofire;
 		};
+		837DA1A31A4365310047239D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 837DA19C1A4365300047239D /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2E4FEFDB19575BE100351305;
+			remoteInfo = SwiftyJSON;
+		};
+		837DA1A51A4365310047239D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 837DA19C1A4365300047239D /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2E4FEFE619575BE100351305;
+			remoteInfo = SwiftyJSONTests;
+		};
+		837DA1A71A4365310047239D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 837DA19C1A4365300047239D /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4EC1C1C91A0C1A2D0026ED0B;
+			remoteInfo = SwiftyJSONOSX;
+		};
+		837DA1A91A4365310047239D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 837DA19C1A4365300047239D /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4EC1C1D31A0C1A2D0026ED0B;
+			remoteInfo = SwiftyJSONOSXTests;
+		};
+		837DA1AB1A4365560047239D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 837DA19C1A4365300047239D /* SwiftyJSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E4FEFDA19575BE100351305;
+			remoteInfo = SwiftyJSON;
+		};
 		D864E9231A4068D100F550A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D864E9021A4068D000F550A4 /* Project object */;
@@ -96,6 +131,7 @@
 		837DA17C1A426B2B0047239D /* home-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-background.png"; sourceTree = "<group>"; };
 		837DA17E1A426D770047239D /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		837DA18F1A4360F90047239D /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		837DA19C1A4365300047239D /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
 		8382CB9A1A418BED00EED15E /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		8382CB9C1A418BED00EED15E /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D8137A341A406A9A006C1726 /* NYTimesCommute-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NYTimesCommute-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -171,9 +207,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		837DA19D1A4365300047239D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				837DA1A41A4365310047239D /* SwiftyJSON.framework */,
+				837DA1A61A4365310047239D /* SwiftyJSONTests.xctest */,
+				837DA1A81A4365310047239D /* SwiftyJSON.framework */,
+				837DA1AA1A4365310047239D /* SwiftyJSONOSXTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D864E9011A4068D000F550A4 = {
 			isa = PBXGroup;
 			children = (
+				837DA19C1A4365300047239D /* SwiftyJSON.xcodeproj */,
 				837DA18F1A4360F90047239D /* Alamofire.xcodeproj */,
 				D8137A351A406E25006C1726 /* libsqlite3.dylib */,
 				D864E9441A40693D00F550A4 /* SystemConfiguration.framework */,
@@ -270,6 +318,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				837DA1AC1A4365560047239D /* PBXTargetDependency */,
 				837DA1991A4362460047239D /* PBXTargetDependency */,
 			);
 			name = NYTimesCommute;
@@ -329,6 +378,10 @@
 					ProductGroup = 837DA1901A4360F90047239D /* Products */;
 					ProjectRef = 837DA18F1A4360F90047239D /* Alamofire.xcodeproj */;
 				},
+				{
+					ProductGroup = 837DA19D1A4365300047239D /* Products */;
+					ProjectRef = 837DA19C1A4365300047239D /* SwiftyJSON.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -351,6 +404,34 @@
 			fileType = wrapper.cfbundle;
 			path = AlamofireTests.xctest;
 			remoteRef = 837DA1961A4360FA0047239D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		837DA1A41A4365310047239D /* SwiftyJSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyJSON.framework;
+			remoteRef = 837DA1A31A4365310047239D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		837DA1A61A4365310047239D /* SwiftyJSONTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftyJSONTests.xctest;
+			remoteRef = 837DA1A51A4365310047239D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		837DA1A81A4365310047239D /* SwiftyJSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyJSON.framework;
+			remoteRef = 837DA1A71A4365310047239D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		837DA1AA1A4365310047239D /* SwiftyJSONOSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftyJSONOSXTests.xctest;
+			remoteRef = 837DA1A91A4365310047239D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -410,6 +491,11 @@
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			targetProxy = 837DA1981A4362460047239D /* PBXContainerItemProxy */;
+		};
+		837DA1AC1A4365560047239D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyJSON;
+			targetProxy = 837DA1AB1A4365560047239D /* PBXContainerItemProxy */;
 		};
 		D864E9241A4068D100F550A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
