@@ -16,8 +16,6 @@ class HomeViewController: UIViewController{
 
     var articlesData:JSON!
     
-    @IBOutlet weak var backgroundImage: UIImageView!
-    
 
     @IBOutlet weak var activity: UIActivityIndicatorView!
     lazy var managedObjectContext : NSManagedObjectContext? = {
@@ -32,8 +30,17 @@ class HomeViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         
+        let image1 = UIImage(named: "splashios.png")
+        let imageview = UIImageView(image: image1)
+        imageview.contentMode = UIViewContentMode.ScaleAspectFill
+        imageview.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+        self.view.addSubview(imageview)
+        
+        activity.center=self.view.center;
         activity.startAnimating()
         
         appDelegate.resetCoreData()
@@ -78,14 +85,10 @@ class HomeViewController: UIViewController{
                             newArticle.setValue(base64String, forKey: "thumbnail")
                         }
                         
-                        if let url : NSString = articleData["geo_facet"].string{
-                            newArticle.setValue(articleData["geo_facet"].string, forKey: "location")
-                        }else{
-                            newArticle.setValue("World", forKey: "location")
-                        }
-                        
+                        newArticle.setValue("World", forKey: "location")
                         newArticle.setValue(articleData["title"].string, forKey: "title")
                         newArticle.setValue(articleData["abstract"].string, forKey: "content")
+
                         newArticle.setValue(articleData["published_date"].string, forKey: "date")
                         newArticle.setValue(articleData["url"].string, forKey: "url")
                         managedContext.save(nil)

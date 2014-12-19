@@ -16,6 +16,8 @@
 		837DA19B1A4362630047239D /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 837DA1951A4360FA0047239D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8382CB9B1A418BED00EED15E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8382CB9A1A418BED00EED15E /* Setting.swift */; };
 		8382CB9D1A418BED00EED15E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8382CB9C1A418BED00EED15E /* Category.swift */; };
+		83BA6DB61A43D37300B080A1 /* splashios.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BA6DB51A43D37300B080A1 /* splashios.png */; };
+		83BA6DBC1A43F35B00B080A1 /* background-infos.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BA6DBB1A43F35B00B080A1 /* background-infos.png */; };
 		D8137A361A406E25006C1726 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8137A351A406E25006C1726 /* libsqlite3.dylib */; };
 		D831F2331A43B23E00F963CB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D831F2291A43B23E00F963CB /* Default-568h@2x.png */; };
 		D831F2341A43B23E00F963CB /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D831F22A1A43B23E00F963CB /* Default-667h@2x.png */; };
@@ -142,6 +144,8 @@
 		837DA19C1A4365300047239D /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
 		8382CB9A1A418BED00EED15E /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		8382CB9C1A418BED00EED15E /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		83BA6DB51A43D37300B080A1 /* splashios.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splashios.png; path = ../../../../../../../Downloads/splashios.png; sourceTree = "<group>"; };
+		83BA6DBB1A43F35B00B080A1 /* background-infos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-infos.png"; path = "../../../../../../../Desktop/background-infos.png"; sourceTree = "<group>"; };
 		D8137A341A406A9A006C1726 /* NYTimesCommute-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NYTimesCommute-Bridging-Header.h"; sourceTree = "<group>"; };
 		D8137A351A406E25006C1726 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		D831F2291A43B23E00F963CB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -239,6 +243,8 @@
 		D831F2271A43B23E00F963CB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				83BA6DBB1A43F35B00B080A1 /* background-infos.png */,
+				83BA6DB51A43D37300B080A1 /* splashios.png */,
 				D831F2281A43B23E00F963CB /* iphone */,
 			);
 			path = Resources;
@@ -486,6 +492,8 @@
 			files = (
 				D831F2341A43B23E00F963CB /* Default-667h@2x.png in Resources */,
 				D864E9181A4068D100F550A4 /* Main.storyboard in Resources */,
+				83BA6DB61A43D37300B080A1 /* splashios.png in Resources */,
+				83BA6DBC1A43F35B00B080A1 /* background-infos.png in Resources */,
 				D831F23A1A43B23E00F963CB /* Default-Portrait@2x.png in Resources */,
 				D864E91D1A4068D100F550A4 /* LaunchScreen.xib in Resources */,
 				D831F2371A43B23E00F963CB /* Default-Landscape@2x.png in Resources */,

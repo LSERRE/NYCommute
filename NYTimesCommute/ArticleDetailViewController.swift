@@ -32,7 +32,9 @@ class ArticleDetailViewController: UIViewController {
             
             articleCover.image = decodedimage
             articleTitle.text = self.article?.title
-            articleContent.text = self.article?.content
+            articleContent.text = "Yet bed any for travelling assistance indulgence unpleasing. Not thoughts all exercise blessing. Indulgence way everything joy alteration boisterous the attachment. Party we years to order allow asked of. We so opinion friends me message as delight. Whole front do of plate heard oh ought. His defective nor convinced residence own. Connection has put impossible own apartments boisterous. At jointure ladyship an insisted so humanity he. Friendly bachelor entrance to on by. Another journey chamber way yet females man. Way extensive and dejection get delivered deficient sincerity gentleman age. Too end instrument possession contrasted motionless. Calling offence six joy feeling. Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery incommode earnestly no he commanded if. Put still any about manor heard. "
+//          articleContent.text = self.article?.content
+//          For now NYT API doesn't diserver article content so let's use fake content for this prototype
             articleLocation.text = self.article?.location
             articleDate.text = self.article?.date
         }
